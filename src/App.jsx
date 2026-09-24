@@ -1,4 +1,5 @@
 import { profile, skills, experience, projects, education, certifications } from "./data";
+import headshot from "./assets/headshot.jpg";
 
 const NAV = ["about", "experience", "skills", "projects", "education"];
 
@@ -27,22 +28,28 @@ export default function App() {
 
       <main>
         <section id="about" className="hero">
-          <p className="prompt">$ whoami</p>
-          <h1>
-            {profile.name}
-            <span className="accent">.</span>
-          </h1>
-          <p className="role">{profile.title} · {profile.location}</p>
-          <p className="tagline">{profile.tagline}</p>
-          <p className="summary">{profile.summary}</p>
-          <div className="links">
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href={profile.github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+          <div className="hero-text">
+            <p className="prompt fade-in d1">$ whoami</p>
+            <h1 className="fade-in d2">
+              {profile.name}
+              <span className="accent">.</span>
+            </h1>
+            <p className="role fade-in d3">{profile.title} · {profile.location}</p>
+            <p className="tagline fade-in d4">{profile.tagline}</p>
+            <p className="summary fade-in d5">{profile.summary}</p>
+            <div className="links fade-in d5">
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+              <a href={profile.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div className="hero-photo fade-in-scale">
+            <div className="hero-photo-glow" />
+            <img src={headshot} alt={profile.name} />
           </div>
         </section>
 
