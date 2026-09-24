@@ -1,16 +1,29 @@
-# React + Vite
+# Nikhil Reddy — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio site, built as a static React app and content-driven from a single data file so it's easy to keep current.
 
-Currently, two official plugins are available:
+Live: https://nikhil-portfolio-zeta-ivory.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Structure
 
-## React Compiler
+```
+src/
+  data.js     all content — profile, skills, experience, projects, education, certifications
+  App.jsx     renders sections from data.js
+  index.css   design system: color tokens (light/dark via prefers-color-scheme), layout, animations
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Updating content
 
-## Expanding the Oxlint configuration
+Everything on the page — bio, skills, experience bullets, projects, education, certifications — comes from `src/data.js`. Edit that file and nothing else needs to change; there's no CMS or build step beyond the normal Vite build.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Running locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Deployment
+
+Deployed on Vercel, connected directly to this GitHub repo — every push to `main` redeploys automatically. No backend, no environment variables required.
